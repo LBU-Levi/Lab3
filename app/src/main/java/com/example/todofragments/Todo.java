@@ -12,10 +12,12 @@ public class Todo
     private Date mDate;
     private boolean mIsComplete;
 
-    public Todo()
+    public Todo(String title, boolean bIsComplete)
     {
         mId = UUID.randomUUID();
         mDate = new Date();
+        mTitle = title;
+        mIsComplete = bIsComplete;
     }
 
     public void setIsComplete(boolean todoIsComplete)
