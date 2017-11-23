@@ -3,7 +3,8 @@ package com.example.todofragments;
 import java.util.Date;
 import java.util.UUID;
 
-public class Todo {
+public class Todo
+{
 
     private UUID mId;
     private String mTitle;
@@ -11,49 +12,59 @@ public class Todo {
     private Date mDate;
     private boolean mIsComplete;
 
-    public Todo() {
+    public Todo()
+    {
         mId = UUID.randomUUID();
         mDate = new Date();
     }
 
-    public void setIsComplete(boolean todoIsComplete) {
+    public void setIsComplete(boolean todoIsComplete)
+    {
         mIsComplete = todoIsComplete;
     }
 
-    public boolean isIsComplete() {
-
+    public boolean isIsComplete()
+    {
         return mIsComplete;
     }
 
-    public UUID getId() {
+    public UUID getId()
+    {
         return mId;
     }
 
-    public String getTitle() {
+    public String getTitle()
+    {
         return mTitle;
     }
 
-    public String getDetail() {
+    public String getDetail()
+    {
         return mDetail;
     }
 
-    public Date getDate() {
+    public Date getDate()
+    {
         return mDate;
     }
 
-    public void setId(UUID todoId) {
+    public void setId(UUID todoId)
+    {
         mId = todoId;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(String title)
+    {
         mTitle = title;
     }
 
-    public void setDetail(String detail) {
+    public void setDetail(String detail)
+    {
         mDetail = detail;
     }
 
-    public void setDate(Date todoDate) {
+    public void setDate(Date todoDate)
+    {
         mDate = todoDate;
     }
 }

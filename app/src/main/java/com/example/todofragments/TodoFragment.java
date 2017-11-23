@@ -26,6 +26,7 @@ public class TodoFragment extends Fragment
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
         mTodo = new Todo();
         // TODO: refactor
         mTodo.setTitle("Test title");
@@ -36,10 +37,9 @@ public class TodoFragment extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
-
         View view = inflater.inflate(R.layout.fragment_todo, container, false);
 
-        mEditTextTitle = (EditText) view.findViewById(R.id.todo_title);
+        mEditTextTitle = view.findViewById(R.id.todo_title);
         mEditTextTitle.setText(mTodo.getTitle());
 
         mEditTextTitle.addTextChangedListener(new TextWatcher()
@@ -63,11 +63,11 @@ public class TodoFragment extends Fragment
             }
         });
 
-        mButtonDate = (Button) view.findViewById(R.id.todo_date);
+        mButtonDate = view.findViewById(R.id.todo_date);
         mButtonDate.setText(mTodo.getDate().toString());
         mButtonDate.setEnabled(false);
 
-        mCheckBoxIsComplete = (CheckBox) view.findViewById(R.id.todo_complete);
+        mCheckBoxIsComplete = view.findViewById(R.id.todo_complete);
         mCheckBoxIsComplete.setOnCheckedChangeListener(new OnCheckedChangeListener()
         {
             @Override
