@@ -16,14 +16,19 @@ import android.widget.EditText;
 
 public class TodoFragment extends Fragment
 {
-    private Todo mTodo;
+    private TaskList m_taskList;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
 
-        mTodo = new Todo("Test title", true);
+        InitialiseApp();
+    }
+
+    private void InitialiseApp()
+    {
+        m_taskList = new TaskList("Test title", true);
     }
 
     @Nullable
@@ -33,7 +38,7 @@ public class TodoFragment extends Fragment
         View view = inflater.inflate(R.layout.fragment_todo, container, false);
 
         final EditText mEditTextTitle = view.findViewById(R.id.todo_title);
-        mEditTextTitle.setText(mTodo.getTitle());
+        mEditTextTitle.setText(m_taskList.getTitle());
 
         mEditTextTitle.addTextChangedListener(new TextWatcher()
         {
@@ -46,7 +51,7 @@ public class TodoFragment extends Fragment
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count)
             {
-                mTodo.setTitle(s.toString());
+                m_taskList.setTitle(s.toString());
             }
 
             @Override
@@ -57,7 +62,7 @@ public class TodoFragment extends Fragment
         });
 
         final Button mButtonDate = view.findViewById(R.id.todo_date);
-        mButtonDate.setText(mTodo.getDate().toString());
+        mButtonDate.setText(m_taskList.getDate().toString());
         mButtonDate.setEnabled(false);
 
         final CheckBox mCheckBoxIsComplete = view.findViewById(R.id.todo_complete);
@@ -66,7 +71,7 @@ public class TodoFragment extends Fragment
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
             {
-                mTodo.setIsComplete(isChecked);
+                m_taskList.setIsComplete(isChecked);
             }
         });
 

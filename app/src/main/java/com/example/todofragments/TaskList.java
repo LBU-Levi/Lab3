@@ -3,7 +3,7 @@ package com.example.todofragments;
 import java.util.Date;
 import java.util.UUID;
 
-public class Todo
+public class TaskList
 {
 
     private UUID mId;
@@ -12,7 +12,7 @@ public class Todo
     private Date mDate;
     private boolean mIsComplete;
 
-    public Todo(String title, boolean bIsComplete)
+    public TaskList(String title, boolean bIsComplete)
     {
         mId = UUID.randomUUID();
         mDate = new Date();
